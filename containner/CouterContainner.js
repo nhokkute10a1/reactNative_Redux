@@ -1,3 +1,6 @@
+/**
+ * Created by Nine Tailed Fox on 14/08/2017.
+ */
 import React, { Component } from 'react';
 import {
     StyleSheet,
@@ -6,8 +9,9 @@ import {
     View
 } from 'react-native';
 import  {connect} from 'react-redux'
+import Counter from '../conponents/Counter'
 
- class Counter extends Component {
+class CounterContainner extends Component {
 
     constructor(props) {
         super(props);
@@ -19,12 +23,7 @@ import  {connect} from 'react-redux'
         const { addNumber, subNumber }=this.props;
 
         return (
-            <View style={ styles.counterView } >
-                <Button onPress={ () => subNumber(number - 1 ) } title="Sub" />
-                <Text>Counter: { number }</Text>
-                <Button onPress={ () => addNumber( number + 1 ) } title="Add" />
-
-            </View>
+            <Counter number={number} {...this.props}/>
         );
     }
 }
@@ -70,4 +69,4 @@ export default connect(
             subNumber: (val) => dispatch( subNumber(val))
         }
     }
-)(Counter);
+)(CounterContainner);

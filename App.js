@@ -58,7 +58,12 @@ const numberReducer = (state = {number: 1}, action) => {
 };
 
 //Store
-const store = createStore(taskListReducer, appState);
+const store = createStore(
+    combineReducers({
+        number: numberReducer,
+        taskList: taskListReducer
+    }),
+);
 
 export default class App extends Component {
     constructor(props) {
@@ -87,6 +92,7 @@ export default class App extends Component {
             <Provider store={store}>
                 <View style={styles.container}>
                     <AddView onAddNewTask={this.onAddNewTask}/>
+                    <Counter/>
                     <TaskFlatList />
                 </View>
             </Provider>

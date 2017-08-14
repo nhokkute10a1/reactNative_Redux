@@ -80,7 +80,8 @@ const  deleteTask = (index) => {
 export default connect(
     state => {
        return {
-           listData: state
+           listData: state.taskList,
+          // numb: state.number
        }
     },
     dispatch => {
