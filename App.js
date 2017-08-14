@@ -11,7 +11,7 @@ import {createStore, combineReducers, applyMiddleware} from 'redux'
 //ban chat la 1 middleware
 import thunk from 'redux-thunk';
 import {Provider} from 'react-redux'
-import AddView from './conponents/AddView';
+import AddViewContainner from './containner/AddViewContainner';
 import TaskListContainner from './containner/TaskListContainner';
 import CouterContainner from './containner/CouterContainner';
 
@@ -74,7 +74,7 @@ export default class App extends Component {
         return (
             <Provider store={store}>
                 <View style={styles.container}>
-                    <AddView onAddNewTask={this.onAddNewTask}/>
+                    <AddViewContainner/>
                     <CouterContainner/>
                     <TaskListContainner />
                 </View>

@@ -24,37 +24,6 @@ class TaskListContainner extends Component {
     }
 }
 
-const styles = StyleSheet.create({
-    itemContainer : {
-        flexDirection: 'row',
-        alignItems: 'center',
-        backgroundColor: 'white',
-        marginHorizontal : 10,
-        marginTop: 10,
-        paddingHorizontal: 10,
-        paddingVertical: 15,
-        borderRadius: 5,
-        borderColor: 'gray',
-        shadowOffset: { width: 0, height: 1 },
-        shadowOpacity: 0.2,
-        shadowColor: 'gray',
-        elevation: 2
-    }
-});
-
-//Action
-const finishTask = (index) => {
-    return {
-        type: 'FINISH',
-        atIndex: index
-    }
-};
-const  deleteTask = (index) => {
-    return {
-        type: 'DELETE',
-        atIndex: index
-    }
-};
 
 export default connect(
     state => {

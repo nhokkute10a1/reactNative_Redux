@@ -34,28 +34,6 @@ Counter.defaultProps = {
 };
 
 
-const styles = StyleSheet.create({
-    counterView : {
-        height: 40,
-        flexDirection: 'row',
-        alignItems: 'center',
-        justifyContent: 'center',
-    }
-});
-
-//Action
-const addNumber = (addVal) => {
-    return {
-        type: 'ADD_NUMBER',
-        value: addVal
-    }
-};
-const subNumber = (subVal) => {
-    return {
-        type: 'SUB_NUMBER',
-        value: subVal
-    }
-};
 
 export default connect(
     state => {

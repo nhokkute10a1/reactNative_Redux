@@ -9,7 +9,7 @@ import {
 } from 'react-native';
 import {connect} from 'react-redux'
 
-class AddView extends Component {
+export default class AddView extends Component {
 
     constructor(props) {
         super(props);
@@ -88,22 +88,3 @@ const styles = StyleSheet.create({
         padding: 7
     },
 });
-
-//Action
-const addTask = (name) => {
-    return {
-        type: 'ADD',
-        taskName: name
-    }
-};
-
-export default connect(
-    state => {
-        return {}
-    },
-    dispatch => {
-        return {
-            onAddNewTask: (name) => dispatch(addTask(name))
-        }
-    }
-)(AddView);
