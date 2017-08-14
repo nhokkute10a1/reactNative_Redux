@@ -12,8 +12,8 @@ import {createStore, combineReducers, applyMiddleware} from 'redux'
 import thunk from 'redux-thunk';
 import {Provider} from 'react-redux'
 import AddView from './conponents/AddView';
-import TaskFlatList from './conponents/TaskFlatList';
-import Counter from './conponents/Counter';
+import TaskListContainner from './containner/TaskListContainner';
+import CouterContainner from './containner/CouterContainner';
 
 //State
 //histories: mang cua gia tri number action tuong tac vao
@@ -70,30 +70,13 @@ export default class App extends Component {
         super(props);
     }
 
-    // onAddNewTask = (taskName) => {
-    //   const newTask = { title: taskName, isFinished: false }
-    //   const newTaskList = [ ...this.state.data, newTask ]
-    //
-    //   this.setState({ data: newTaskList });
-    // }
-    //
-    // onFinishedItem = (index) => {
-    //   let newTaskList = this.state.data;
-    //   newTaskList[index].isFinished = true;
-    //   this.setState({ data: newTaskList });
-    // }
-    //
-    // onDeleteItem = (index) => {
-    //   let newTaskList = this.state.data.filter( (item, i) => i != index );
-    //   this.setState({ data: newTaskList });
-    // }
     render() {
         return (
             <Provider store={store}>
                 <View style={styles.container}>
                     <AddView onAddNewTask={this.onAddNewTask}/>
-                    <Counter/>
-                    <TaskFlatList />
+                    <CouterContainner/>
+                    <TaskListContainner />
                 </View>
             </Provider>
         );

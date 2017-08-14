@@ -7,7 +7,7 @@ import {
 } from 'react-native';
 import  {connect} from 'react-redux'
 
- class Counter extends Component {
+ export default class Counter extends Component {
 
     constructor(props) {
         super(props);
@@ -15,14 +15,14 @@ import  {connect} from 'react-redux'
     }
 
     render() {
-        const { number }=this.props.number;
+        const { val }=this.props;
         const { addNumber, subNumber }=this.props;
 
         return (
             <View style={ styles.counterView } >
-                <Button onPress={ () => subNumber(number - 1 ) } title="Sub" />
-                <Text>Counter: { number }</Text>
-                <Button onPress={ () => addNumber( number + 1 ) } title="Add" />
+                <Button onPress={ () => subNumber(val - 1 ) } title="Sub" />
+                <Text>Counter: { val }</Text>
+                <Button onPress={ () => addNumber( val + 1 ) } title="Add" />
 
             </View>
         );
@@ -44,30 +44,4 @@ const styles = StyleSheet.create({
     }
 });
 
-//Action
-const addNumber = (addVal) => {
-    return {
-        type: 'ADD_NUMBER',
-        value: addVal
-    }
-};
-const subNumber = (subVal) => {
-    return {
-        type: 'SUB_NUMBER',
-        value: subVal
-    }
-};
 
-export default connect(
-    state => {
-        return {
-            number: state.number
-        }
-    },
-    dispatch => {
-        return {
-            addNumber: (val) => dispatch(addNumber(val)),
-            subNumber: (val) => dispatch( subNumber(val))
-        }
-    }
-)(Counter);

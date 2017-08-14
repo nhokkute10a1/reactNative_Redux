@@ -23,7 +23,7 @@ class CounterContainner extends Component {
         const { addNumber, subNumber }=this.props;
 
         return (
-            <Counter number={number} {...this.props}/>
+            <Counter val={number} {...this.props}/>
         );
     }
 }
